@@ -1,6 +1,7 @@
-import logo from '../../../src/assets/Images/logo.png'
-import flag from '../../../src/assets/Images/flag.svg'
-import profil from '../../../src/assets/Images/profil.svg' 
+import logo from '../../assets/Images/logo.png'
+import flag from '../../assets/Images/flag.svg'
+import profil from '../../assets/Images/profil.svg' 
+import './Nav.css'
 
 
 function Nav() {
