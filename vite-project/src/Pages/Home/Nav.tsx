@@ -1,10 +1,13 @@
-import flag from './../../assets/Images/flag.svg'
-import profil from './../../assets/Images/profil.svg'
+import logo from '../../../src/assets/Images/logo.png'
+import flag from '../../../src/assets/Images/flag.svg'
+import profil from '../../../src/assets/Images/profil.svg' 
 
-function Home() {
+
+function Nav() {
 
   return (
     <>
+      <div><img src={logo} /></div>
       <li>Home</li>
       <li>Arrival / Stock on sale</li>
       <li>Market trends</li>
@@ -18,4 +21,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Nav
