@@ -1,5 +1,5 @@
 import './App.css'
-import Nav from './Pages/Home/Nav'
+import Home from './Pages/Home/Home'
 
 
 
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Nav/>
+      <Home/>
     </>
   )
 }
