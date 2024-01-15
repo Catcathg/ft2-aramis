@@ -1,5 +1,5 @@
 import './App.css'
-import Nav from './Pages/Home/Nav'
+import Nav from './Components/Nav'
 
 
 
