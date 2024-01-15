@@ -1,14 +1,13 @@
-import Header  from './Componenets/Header'
 import './App.css'
-import Nav from './Pages/Home/Nav'
+import Nav from './Components/Nav'
+
 
 
 function App() {
 
   return (
     <>
-    <Header />
-      <Nav />
+      <Nav/>
     </>
   )
 }
