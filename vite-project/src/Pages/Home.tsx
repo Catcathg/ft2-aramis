@@ -1,10 +1,9 @@
-import Nav from '../Componenets/Nav'
+import Nav from '../Components/Nav'
 
 export default function Home() {
   return (
     <>
     <Nav/>
-    <h1>Home</h1>
     </>
   )
 }
