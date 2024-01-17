@@ -9,17 +9,16 @@ import listBrand from '@/Components/listBrand';
 function Content() {
     return (
         <>
-            {/* <body>
+            <div>
                 <img className="background" src={background} />
-            </body> */}
+            </div>
             <div className="bodyLeft">
                 <h1>Marques</h1>
                 <img className="legendBrand" src={legendBrand} />
                 <img className="legendStep" src={legendStep} />
-
                 <listBrand />
             </div>
-            
+
         </>
     )
 }

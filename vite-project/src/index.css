@@ -13,14 +13,11 @@
 }
 
 a {
-
   text-decoration: inherit;
 }
 
 body {
   margin: 0 auto;
-  display: flex;
-  place-items: center;
 }
 
 
