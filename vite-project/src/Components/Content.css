@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Smooch+Sans:wght@700&display=swap');
 
-.top {
-    margin: 30px 0px 0px 40px;
+.content {
+    padding-top: 130px;
+    margin-left: 30px;
 }
-
 
 h1 {
     color: #000;
@@ -30,4 +30,10 @@ h2 {
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
+}
+
+.brandLogo {
+    display: flex;
+    justify-content: space-around;
+    width: 392px;
 }
