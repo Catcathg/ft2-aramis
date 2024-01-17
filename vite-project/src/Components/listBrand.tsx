@@ -13,8 +13,9 @@ export default function listBrand () {
         bgcolor: 'background.paper',
         position: 'relative',
         overflow: 'auto',
-        maxHeight: 300,
+        maxHeight: 480,
         '& ul': { padding: 0 },
+        borderRadius: 5,
       }}
       subheader={<li />}
     >
