@@ -8,15 +8,17 @@ import SearchBar from '@/Components/searchBar';
 export default function listBrand() {
   return (
     <div>
+    <ListSubheader/>
     <SearchBar />
       <List
         sx={{
           width: '100%',
-          maxWidth: 360,
+          maxWidth: 600,
           bgcolor: 'background.paper',
           position: 'relative',
           overflow: 'auto',
-          maxHeight: 480,
+          maxHeight: 450,
+          borderRadius: 5,
           '& ul': { padding: 0 },
         }}
         subheader={<li />}

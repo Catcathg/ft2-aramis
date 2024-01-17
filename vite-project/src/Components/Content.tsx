@@ -1,24 +1,31 @@
-import background from '@/assets/Images/background.png'
-import legendBrand from '@/assets/Images/legendBrand.png'
-import legendStep from '@/assets/Images/legendStep.png'
-import ListBrand from '@/Components/listBrand';
-
 import './Content.css'
+import Peugeot from '@/assets/Images/peugeot.svg'
+import Citroen from '@/assets/Images/citroen.svg'
+import Renault from '@/assets/Images/Renault.svg'
+import Skoda from '@/assets/Images/skoda.svg'
+import HistoricPurchase from '@/assets/Images/historicPurchase.png'
+
+
 
 
 function Content() {
     return (
         <>
-            <div className="image">
-                <img className="background" src={background} />
+            <div className="top">
+                <h1>Welcome back Baptiste !</h1>
+                <h2>Brands</h2>
             </div>
             <div className="bodyLeft">
-                <h1>Marques</h1>
-                <img className="legendBrand" src={legendBrand} />
-                <img className="legendStep" src={legendStep} />
-            </div>
-            <div className="bodyCenter">
-                <ListBrand />
+                <div className="brandLogo">
+                    <img src={Peugeot} />
+                    <img src={Citroen} />
+                    <img src={Renault} />
+                    <img src={Skoda} />
+                </div>
+                <p className="purchase">Purchase in progress</p>
+                <div className="historic">
+                    <img src={HistoricPurchase} />
+                </div>
             </div>
 
         </>
