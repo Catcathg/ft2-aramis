@@ -1,9 +1,8 @@
 import background from '@/assets/Images/background.png'
-import './Content.css'
 import legendBrand from '@/assets/Images/legendBrand.png'
 import legendStep from '@/assets/Images/legendStep.png'
-import listBrand from '@/Components/listBrand';
-
+import ListBrand from '@/Components/listBrand';
+import './Content.css'
 
 
 function Content() {
@@ -16,7 +15,9 @@ function Content() {
                 <h1>Marques</h1>
                 <img className="legendBrand" src={legendBrand} />
                 <img className="legendStep" src={legendStep} />
-                <listBrand />
+            </div>
+            <div className="bodyCenter">
+                <ListBrand />
             </div>
 
         </>
