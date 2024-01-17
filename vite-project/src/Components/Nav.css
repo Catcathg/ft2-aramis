@@ -3,12 +3,18 @@ li {
 }
 
 nav {
+    position: fixed;
     margin: 0px;
-    padding: 32px;
+    padding: 25px;
+    width: 100%;
+    z-index: 1000;
     display: flex;
+    background-color: #FFFFFF;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #EFF0F6;
+    overflow: hidden;
+
 }
 
 .nav-menu {
@@ -37,6 +43,7 @@ nav {
     display: flex;
     align-items: center;
     margin-left: 24px;
+    margin-right: 24px;
 }
 
 .profil img {
