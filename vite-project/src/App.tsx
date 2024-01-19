@@ -4,7 +4,7 @@ import './App.css';
 
 // pages
 import Home from './Pages/Home'
-import About from './Pages/About'
+import PageModele from './Pages/PageModele'
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path={'/'} element={<Home />} />
-        <Route path={'/about/'} element={<About />} />
+        <Route path={'/PageModele/:modele'} element={<PageModele />} />
         <Route path={'*'} element={<>Erreur 404</>} />
       </Routes>
     </div>

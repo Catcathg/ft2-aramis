@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');.Content{
+    padding-top: 130px;
+    padding-left: 71px;
+}
+.Titre{
+    font-family: 'Smooch Sans';
+    color: #065C9E;
+    font-weight: 120;
+    font-size: 120px;
+}
+.En-tête1erGraphique{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Smooch Sans';
+    margin-right: 40px;
+    padding: 10px 15px 10px 15px;
+    font-size: 20px;
+    border-radius: 16px;
+    border: 3px solid #F2F2F2;
+    background: #FFF;   
+}
+.SousTitrePremierGraphique{
+
+}
+.dateChange{
+    border-radius: 15px;
+    background-color: #CFE9FD;
+    display: flex;
+    font-family:'Open Sans';
+    color: #065C9E  ;
+    font-size: 12px;
+    font-weight: 600;
+    align-items: center;
+}
+.Parking{
+    width: 460px;
+    height: 489px;
+    border: 1px solid #B4BED9;
+    border-radius: 16px;
+
+}
+.ChartsRadar{
+    
+}
