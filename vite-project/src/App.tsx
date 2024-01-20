@@ -5,6 +5,7 @@ import './App.css';
 // pages
 import Home from './Pages/Home'
 import About from './Pages/About'
+import BarChart from "./Components/BarChart";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path={'/'} element={<Home />} />
         <Route path={'/about/'} element={<About />} />
         <Route path={'*'} element={<>Erreur 404</>} />
+        <Route path={'/barchart/'} element={<BarChart />} />
       </Routes>
     </div>
   )
