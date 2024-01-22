@@ -43,34 +43,47 @@ const data = [
   },
 ];
 
-export default function RadarCharts({modele}) {
+export default function RadarCharts({modele},{statut}) {
+  
   const stockModele = stock.filter(item=>item.VEHICULE_MODELE === modele).length
+  const StepBuilder = 
+  stock.filter((e: any) => {
+    if (!!e.STATUT_VEHICULE_ROBUSTO) {
+        return !!e && e[`${e.STATUT_VEHICULE_ROBUSTO}`] === ""
+    } else {
+        return e
+    }
+})  
 
-
-  const data = [
+const data = [
     {
-      subject: 'Arrivage',
-      A: stockModele, 
+      subject: 'Bought',
+      A: stockModele,
+      B: 40,
       fullMark: stockModele + 10,
     },
     {
-      subject: 'Arrivage 2',
+      subject: 'Arrivals',
       A: stockModele, 
+      B: 40,
       fullMark: stockModele + 5,
     },
     {
-      subject: 'Arrivage 3',
+      subject: 'Waiting for sale',
       A: stockModele, 
+      B: 30,
       fullMark: stockModele + 40,
     },
     {
-      subject: 'Arrivage 4',
+      subject: 'For sale',
       A: stockModele, 
+      B: 45,
       fullMark: stockModele + 50,
     },
     {
-      subject: 'Arrivage 5',
+      subject: 'Sold',
       A: stockModele, 
+      B: 15,
       fullMark: stockModele + 3,
     },
   ]
@@ -82,7 +95,9 @@ export default function RadarCharts({modele}) {
         <PolarGrid />
         <PolarAngleAxis dataKey="subject" />
         <PolarRadiusAxis angle={90} domain={[0, max]} />
-        <Radar name="Aramis" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+        <Radar name="Aramis" dataKey="A" stroke="#8884d8" fill="#5694C4" fillOpacity={0.6} />
+        <Radar name="Objectifs" dataKey="B" stroke="#F26914" fill="#F695A8" fillOpacity={0.6} />
+
         <Legend />
       </RadarChart>
     </ResponsiveContainer>

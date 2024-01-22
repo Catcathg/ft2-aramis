@@ -4,9 +4,8 @@ import './App.css';
 
 // pages
 import Home from './Pages/Home'
-import About from './Pages/About'
 import BarChart from "./Components/BarChart";
-
+import PageModele from "./Components/ContentPageModele"
 
 function App() {
 
