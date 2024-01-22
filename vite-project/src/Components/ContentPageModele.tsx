@@ -35,10 +35,10 @@ export default function ContentPageModele() {
     useEffect(() => {
         if (dataset && dataset.length > 0) {
             setMarque(dataset.find((item: any) => {
-                return !!item && item.VEHICULE_MODELE === modele
+                return !!item && String(item.VEHICULE_MODELE) === String(modele)
             })?.VEHICULE_MARQUE)
             sectCar(dataset.filter((item: any) => {
-                return !!item && item.VEHICULE_MODELE === modele
+                return !!item && String(item.VEHICULE_MODELE) === String(modele)
             }))
         }
     }, []);

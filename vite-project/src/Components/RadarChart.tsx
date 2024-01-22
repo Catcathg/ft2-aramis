@@ -31,8 +31,8 @@ export default function RadarCharts({ data, modele, steps, fournisseur1 }, { sta
     if (dataLoaded && dataLoaded.length > 0) {
 
       let tmpArrayData = [];
-
       steps.map((elt: any, index: number) => {
+
 
         console.log('elt: ', elt)
         tmpArrayData.push({
@@ -43,7 +43,7 @@ export default function RadarCharts({ data, modele, steps, fournisseur1 }, { sta
             return o.STATUT_VEHICULE_ROBUSTO === elt
           }),
           B: 110,
-          fullMark: setDataMax(dataLoaded.length),
+          // fullMark: maxValue, // Laisser vide pour que le chart se dimension sur son propre max
         })
 
       })
@@ -67,8 +67,8 @@ export default function RadarCharts({ data, modele, steps, fournisseur1 }, { sta
         <PolarGrid />
         <PolarAngleAxis dataKey="subject" />
         <PolarRadiusAxis angle={90} domain={[0, dataMax]} />
+        <Radar name="Objectifs" dataKey="B" stroke="#F26914" fill="#F695A8" fillOpacity={0.6} />
         <Radar name={fournisseur1} dataKey="A" stroke="#8884d8" fill="#5694C4" fillOpacity={0.6} />
-        {/* <Radar name="Objectifs" dataKey="B" stroke="#F26914" fill="#F695A8" fillOpacity={0.6} /> */}
 
         <Legend />
       </RadarChart>
