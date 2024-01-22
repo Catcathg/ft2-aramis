@@ -4,7 +4,8 @@ li {
 
 nav {
     position: fixed;
-    margin: 0px 2px;
+    margin: 0px;
+    padding: 20px;
     width: 100%;
     z-index: 1000;
     display: flex;
@@ -22,7 +23,7 @@ nav {
 }
 
 .button {
-    border-radius: 40%;
+    border-radius: 50px;
     border: 2px solid #EFF0F6;
     width: 140px;
     height: 36px;
