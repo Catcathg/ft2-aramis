@@ -4,6 +4,7 @@ import RadarChart from "./RadarChart"
 import { useParams } from "react-router"
 import dataset from '@data/aramis-auto/stock-arrivage.json'
 import Parking from '@/assets/Images/Parking.png'
+import BarChart from "./BarChart"
 
 export default function ContentPageModele() {
 
@@ -28,6 +29,10 @@ export default function ContentPageModele() {
                 <div className="ChartsRadar">
                     <RadarChart modele = {modele}/>
                 </div>
+            </div>
+            <div className="DeuxiemeGraphique">
+            <p className='SousTitreDeuxiemeGraphique'> Comparison of the market share of the C3 on the automobile market and at Aramis :</p>
+            <div className='Bar'> <BarChart/> </div>
             </div>
         </div>
 
