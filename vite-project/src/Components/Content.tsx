@@ -8,6 +8,7 @@ import Car2 from '@/assets/Images/car2.png'
 import Car3 from '@/assets/Images/car3.png'
 import StockIcon from '@/assets/Images/stock-icon.svg'
 import ArrivageIcon from '@/assets/Images/arrivage-icon.svg'
+import Line from '@/assets/Images/line.svg'
 import SearchBar from './searchBar'
 import List from './List'
 import HistoricItemsTableau from './HistoricItems'
@@ -42,22 +43,43 @@ function Content() {
                         <p className="stock">Lowest stocks</p>
                         <div className="card">
                             <div className="box1">
-                                <img className="Car" src={Car1} alt="Car1" />
-                                <p className="nameCar">Peugeot 108</p>
+                                <img className="imageCar" src={Car1} alt="Car1" />
                                 <div className="infoCar">
-                                    <p className="number">0</p>
-                                    <img src={StockIcon} alt="StockIcon" />
-                                    <p className="number">7</p>
-                                    <img src={ArrivageIcon} alt="ArrivageIcon" />
+                                    <p className="nameCar">Peugeot 108</p>
+                                    <div className="stockInfo">
+                                        <span>0</span>
+                                        <img src={StockIcon} alt="Stock Icon" />
+                                        <img src={Line} alt="separator line" />
+                                        <span>14</span>
+                                        <img src={ArrivageIcon} alt="Arrivage Icon" />
+                                    </div>
                                 </div>
                             </div>
                             <div className="box2">
-                                <img src={Car2} alt="Car2" />
-                                <span className="nameCar">Peugeot 508 SW</span>
+                                <img className="imageCar" src={Car2} alt="Car2" />
+                                <div className="infoCar">
+                                    <p className="nameCar">Peugeot 508 SW</p>
+                                    <div className="stockInfo">
+                                        <span>1</span>
+                                        <img src={StockIcon} alt="Stock Icon" />
+                                        <img src={Line} alt="separator line" />
+                                        <span>5</span>
+                                        <img src={ArrivageIcon} alt="Arrivage Icon" />
+                                    </div>
+                                </div>
                             </div>
                             <div className="box3">
-                                <img src={Car3} alt="Car3" />
-                                <span className="nameCar">Jumper Fourgon</span>
+                                <img className="imageCar" src={Car3} alt="Car3" />
+                                <div className="infoCar">
+                                    <p className="nameCar">Jumper Fourgon</p>
+                                    <div className="stockInfo">
+                                        <span>2</span>
+                                        <img src={StockIcon} alt="Stock Icon" />
+                                        <img src={Line} alt="separator line" />
+                                        <span>0</span>
+                                        <img src={ArrivageIcon} alt="Arrivage Icon" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -62,8 +62,9 @@ a :hover {
 
 .card {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .box1 {
@@ -72,6 +73,9 @@ a :hover {
     border-radius: 12px;
     background: #A7CDEA;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .box2 {
@@ -80,6 +84,9 @@ a :hover {
     border-radius: 12px;
     background: #A7CDEA;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .box3 {
@@ -88,8 +95,10 @@ a :hover {
     border-radius: 12px;
     background: #A7CDEA;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
-
 
 
 .nameCar {
@@ -100,3 +109,20 @@ a :hover {
     font-weight: 700;
 }
 
+.infoCar {
+   display: inline-block;
+   width: 140px;
+}
+
+.imageCar{
+    height: 90px;
+}
+
+.stockInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stockInfo span {
+    color: white;
+}
