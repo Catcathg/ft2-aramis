@@ -20,11 +20,13 @@ function BarChart({}) {
     series: [
       {
         name: "French Market",
-        data: [30, 40, 45]
+        data: [30, 40, 45],
+        color: '#F695A8'
       },
       {
         name: "Aramis Auto",
-        data: [15, 25, 30]
+        data: [15, 25, 30],
+        color: '#A7CDEA'
       }
     ]
   };
