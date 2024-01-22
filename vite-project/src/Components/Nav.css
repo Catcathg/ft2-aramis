@@ -4,8 +4,7 @@ li {
 
 nav {
     position: fixed;
-    margin: 0px;
-    padding: 25px;
+    margin: 0px 2px;
     width: 100%;
     z-index: 1000;
     display: flex;
@@ -14,7 +13,7 @@ nav {
     align-items: center;
     border-bottom: 1px solid #EFF0F6;
     overflow: hidden;
-
+    padding: 15px;
 }
 
 .nav-menu {

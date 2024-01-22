@@ -6,6 +6,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import FolderIcon from '@mui/icons-material/Folder';
+import DataSetStockVente from '../../data/aramis-auto/stock-vente.json'
 import './List.css'
 
 const Demo = styled('div')(({ theme }) => ({
@@ -13,16 +14,24 @@ const Demo = styled('div')(({ theme }) => ({
 }));
 
 export default function SimpleListWithIcons() {
+    const ModelsStockVente = DataSetStockVente.reduce((acc, item) => {
+        if (item.VEHICULE_MARQUE === 'Citroën') {
+            acc[item.VEHICULE_MODELE] = (acc[item.VEHICULE_MODELE] || 0) + 1;
+        } return acc;
+    }, {});
+
+    console.log(ModelsStockVente)
+
     return (
-        <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+        <Box sx={{ flexGrow: 1, maxWidth: 250 }}>
             <Demo>
-                <List>
-                    {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((value) => (
-                        <ListItem key={value}>
+                <List sx={{ height: 440, overflow: 'auto' }}>
+                    {Object.entries(ModelsStockVente).map(([model, nbStock], index) => (
+                        <ListItem key={index}>
                             <ListItemIcon>
                                 <FolderIcon />
                             </ListItemIcon>
-                            <ListItemText primary={`Item ${value + 1}`} />
+                            <ListItemText primary={`Modèle: ${model} (${nbStock})`}/>
                         </ListItem>
                     ))}
                 </List>
@@ -30,4 +39,3 @@ export default function SimpleListWithIcons() {
         </Box>
     );
 }
-
