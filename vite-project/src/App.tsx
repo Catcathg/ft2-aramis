@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path={'/'} element={<Home />} />
-        <Route path={'/about/'} element={<About />} />
+        <Route path={'/PageModele/:modele'} element={<PageModele />} />
         <Route path={'*'} element={<>Erreur 404</>} />
         <Route path={'/barchart/'} element={<BarChart />} />
       </Routes>
