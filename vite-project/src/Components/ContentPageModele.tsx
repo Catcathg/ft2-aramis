@@ -5,6 +5,7 @@ import { useParams } from "react-router"
 import dataset from '@data/aramis-auto/stock-arrivage.json'
 import Parking from '@/assets/Images/Parking.png'
 import { useEffect, useState } from "react"
+import BarChart from "./BarChart"
 
 import _ from 'lodash';
 
@@ -45,7 +46,7 @@ export default function ContentPageModele() {
 
 
     useEffect(() => {
-        let steps = _.chain(dataset.filter((e) => arrayStepsConsidered.includes(e[indicator])  )).map(indicator).uniq().value();
+        let steps = _.chain(dataset.filter((e) => arrayStepsConsidered.includes(e[indicator]))).map(indicator).uniq().value();
         setStepBuilder(steps);
     }, [car]);
 
@@ -71,8 +72,11 @@ export default function ContentPageModele() {
                             <RadarChart data={car} modele={modele} steps={stepBuilder} fournisseur1={'Aramis'} />
                         </div>
                     </div>
+                    <div className="DeuxiemeGraphique">
+                        <p className='SousTitreDeuxiemeGraphique'> Comparison of the market share of the C3 on the automobile market and at Aramis :</p>
+                        <div className='Bar'> <BarChart /> </div>
+                    </div>
                 </div>
-
             </>
             :
             <>No data</>

@@ -52,3 +52,24 @@
     display: flex;
     justify-content: space-between;
 }
+
+.SousTitreDeuxiemeGraphique{
+    color:#065C9E;
+    font-weight: bold;
+    font-size: 24px;
+
+}
+
+.DeuxiemeGraphique{
+    margin-top: 100px;
+}
+
+.Bar{
+    width: 892px;
+    height: 552px;
+}
+
+.DeuxiemeGraphique{
+    display: flex;
+    flex-direction: column;
+}
