@@ -2,6 +2,9 @@
     padding-top: 130px;
     padding-left: 71px;
 }
+.dateChange p{
+    margin: 5px;
+}
 .Titre{
     font-family: 'Smooch Sans';
     color: #065C9E;
@@ -13,10 +16,10 @@
     justify-content: space-between;
     font-family: 'Smooch Sans';
     margin-right: 40px;
-    padding: 10px 15px 10px 15px;
+    padding: 5px 10px 5px 10px;
     font-size: 20px;
     border-radius: 16px;
-    border: 3px solid #F2F2F2;
+    border: 2px solid #F2F2F2;
     background: #FFF;   
 }
 .SousTitrePremierGraphique{
@@ -24,21 +27,49 @@
 }
 .dateChange{
     border-radius: 15px;
-    background-color: #CFE9FD;
+    background-color: #065C9E;
     display: flex;
     font-family:'Open Sans';
-    color: #065C9E  ;
+    color: #FFFFFF  ;
     font-size: 12px;
     font-weight: 600;
     align-items: center;
 }
 .Parking{
-    width: 460px;
-    height: 489px;
+    image-resolution: 100%;
+    width: 400px;
+    height: 440px;
     border: 1px solid #B4BED9;
     border-radius: 16px;
 
 }
 .ChartsRadar{
-    
+    width: 500px;
+    height: 500px;
+}
+.PremierGraphique{
+    margin: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.SousTitreDeuxiemeGraphique{
+    color:#065C9E;
+    font-weight: bold;
+    font-size: 24px;
+
+}
+
+.DeuxiemeGraphique{
+    margin-top: 100px;
+}
+
+.Bar{
+    width: 892px;
+    height: 552px;
+}
+
+.DeuxiemeGraphique{
+    display: flex;
+    flex-direction: column;
 }

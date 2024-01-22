@@ -1,4 +1,5 @@
 import Chart from "react-apexcharts";
+import "./BarChart.css"
 
 function BarChart({}) {
   const config = {
@@ -34,13 +35,16 @@ function BarChart({}) {
   return (
     <div className="app">
       <div className="row">
+        <div className="chart-container">
         <div className="mixed-chart">
           <Chart
             options={config.options}
             series={config.series}
             type="bar"
-            width="500"
+            width="892"
+            height="552"
           />
+          </div>
         </div>
       </div>
     </div>

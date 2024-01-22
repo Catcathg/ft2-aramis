@@ -4,8 +4,8 @@ import './App.css';
 
 // pages
 import Home from './Pages/Home'
-import ContentPageModele from "./Components/ContentPageModele";
-import BarChart from "./Components/BarChart";
+import PageModele from "./Components/ContentPageModele"
+import Profile from "./Components/ProfilePage"
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
         <Route path={'/'} element={<Home />} />
         <Route path={'/PageModele/:modele'} element={<ContentPageModele />} />
         <Route path={'*'} element={<>Erreur 404</>} />
-        <Route path={'/barchart/'} element={<BarChart />} />
+        <Route path={'/Profile/'} element={<Profile/>} />
       </Routes>
     </div>
   )
