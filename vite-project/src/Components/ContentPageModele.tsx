@@ -7,9 +7,9 @@ import dataset from '@data/aramis-auto/stock-arrivage.json'
 import Parking from '@/assets/Images/Parking.png'
 import { useEffect, useState } from "react"
 import BarChart from "./BarChart"
+import BarChartStock from "./BarChartStock"
 
 import _ from 'lodash';
-import BarChartStock from "./BarChartStock"
 
 export default function ContentPageModele() {
 

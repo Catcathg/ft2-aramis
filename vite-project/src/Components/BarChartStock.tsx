@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import Chart from "react-apexcharts";
 import "./BarChart.css";
 import DataSetStockVente from '@data/aramis-auto/stock-arrivage.json';
@@ -10,27 +10,27 @@ function BarChartStock() {
       acc[item.STATUT_VEHICULE_ROBUSTO] = (acc[item.STATUT_VEHICULE_ROBUSTO] || 0) + 1;
     }
     return acc;
-  }, {});
+  }, {}); 
 
   const [stepBuilder, setStepBuilder] = useState([]);
   const indicator = "STATUT_VEHICULE_ROBUSTO";
 
-  const arrayStepsConsidered = [
+  const arrayStepsConsidered = useMemo(() => [
     "Arrivé fournisseur",
     "Préparation effectuée. VH prêt",
     "En cours de préparation",
     "Confirmé fournisseur",
     "Arrivé Aramis",
-  ];
+  ], []);
 
   useEffect(() => {
     const steps = _.chain(DataSetStockVente)
       .filter((e) => arrayStepsConsidered.includes(e[indicator]))
-      .map(indicator)
+      .map((e) => e[indicator])
       .uniq()
       .value();
     setStepBuilder(steps);
-  }, [ModelsStockVente]);
+  }, [arrayStepsConsidered, indicator]);
 
   const config = {
     options: {

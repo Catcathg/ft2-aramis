@@ -23,7 +23,9 @@
     border: 2px solid #F2F2F2;
     background: #FFF;   
 }
+.SousTitrePremierGraphique{
 
+}
 .dateChange{
     border-radius: 15px;
     background-color: #065C9E;
@@ -34,20 +36,18 @@
     font-weight: 600;
     align-items: center;
 }
-
 .Parking{
     image-resolution: 100%;
     width: 400px;
     height: 440px;
     border: 1px solid #B4BED9;
     border-radius: 16px;
-}
 
+}
 .ChartsRadar{
     width: 100%;
-    height: 100%;
+    height: 600px;
 }
-
 .PremierGraphique{
     margin: 25px;
     display: flex;
@@ -58,6 +58,7 @@
     color:#065C9E;
     font-weight: bold;
     font-size: 24px;
+
 }
 
 .DeuxiemeGraphique{
@@ -66,26 +67,13 @@
 
 .Bar{
     width: 892px;
-    height: 600px;
+    height: 552px;
 }
 
 .DeuxiemeGraphique{
     display: flex;
     flex-direction: column;
 }
-
-.SousTitreTroixièmeGraphique{
-    color:#065C9E;
-    font-weight: bold;
-    font-size: 24px;
+.TroixiemeGraphique{
+    padding-top: 150px;     
 }
-
-.ToixièmeGraphique{
-    margin-top: 200px;
-}
-
-.TroixièmeGraphique{
-    display: flex;
-    flex-direction: column;
-}
-
