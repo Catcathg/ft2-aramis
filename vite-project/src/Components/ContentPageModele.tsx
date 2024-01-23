@@ -9,6 +9,7 @@ import { useEffect, useState } from "react"
 import BarChart from "./BarChart"
 
 import _ from 'lodash';
+import BarChartStock from "./BarChartStock"
 
 export default function ContentPageModele() {
 
@@ -56,7 +57,7 @@ export default function ContentPageModele() {
     return (
         car ?
             <>
-            <Nav />
+                <Nav />
                 <div className='Content'>
                     <h1 className='Titre'>{!!marque && marque} {!!modele && modele}</h1>
                     <div className="En-tête1erGraphique">
@@ -75,8 +76,18 @@ export default function ContentPageModele() {
                         </div>
                     </div>
                     <div className="DeuxiemeGraphique">
-                        <p className='SousTitreDeuxiemeGraphique'> Comparison of the market share of the C3 on the automobile market and at Aramis :</p>
+                        <p className='SousTitreDeuxiemeGraphique'>Comparison of the market share of the C3 on the automobile market and at Aramis :</p>
                         <div className='Bar'> <BarChart /> </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div className="TroixièmeGraphique">
+                        <p className='SousTitreTroixièmeGraphique'>Stock of vehicles at each stage of sale</p>
+                        <div className='Bar'> <BarChartStock /></div>
                     </div>
                 </div>
             </>
