@@ -26,11 +26,12 @@ function BarChartStock() {
   useEffect(() => {
     const steps = _.chain(DataSetStockVente)
       .filter((e) => arrayStepsConsidered.includes(e[indicator]))
-      .map(indicator)
+      .map((e) => e[indicator])  
       .uniq()
       .value();
     setStepBuilder(steps);
   }, [ModelsStockVente]);
+  
 
   const config = {
     options: {
