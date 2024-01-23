@@ -1,10 +1,7 @@
 import React, { PureComponent, useEffect, useState } from 'react';
 import { Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
-
 import _ from 'lodash';
-
-
 
 
 export default function RadarCharts({ data, modele, steps, fournisseur1 }, { statut }) {

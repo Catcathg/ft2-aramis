@@ -1,4 +1,5 @@
 import "./ContentPageModele.css"
+import Nav from "./Nav"
 import Chevron from "../assets/Images/Chevron.svg"
 import RadarChart from "./RadarChart"
 import { useParams } from "react-router"
@@ -55,10 +56,11 @@ export default function ContentPageModele() {
     return (
         car ?
             <>
+            <Nav />
                 <div className='Content'>
                     <h1 className='Titre'>{!!marque && marque} {!!modele && modele}</h1>
                     <div className="En-tête1erGraphique">
-                        <p className='SousTitrePremierGraphique'>Prévisions :</p>
+                        <p className='SousTitrePremierGraphique'>Forecasts</p>
                         <div className="dateChange">
                             <p>04/10/2023</p>
                             <img src={Chevron} alt="Chevron" />

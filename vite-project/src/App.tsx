@@ -4,7 +4,7 @@ import './App.css';
 
 // pages
 import Home from './Pages/Home'
-import PageModele from "./Components/ContentPageModele"
+import ContentPageModele from "./Components/ContentPageModele"
 import Profile from "./Components/ProfilePage"
 
 function App() {
