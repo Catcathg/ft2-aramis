@@ -23,6 +23,8 @@ function BarChartStock() {
     "Arrivé Aramis",
   ], []);
 
+  const [marque, setMarque] = useState<string>(null);
+  
   useEffect(() => {
     const steps = _.chain(DataSetStockVente)
       .filter((e) => arrayStepsConsidered.includes(e[indicator]))

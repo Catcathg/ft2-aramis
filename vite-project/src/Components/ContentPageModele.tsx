@@ -59,12 +59,14 @@ export default function ContentPageModele() {
             <>
                 <Nav />
                 <div className='Content'>
-                    <h1 className='Titre'>{!!marque && marque} {!!modele && modele}</h1>
-                    <div className="En-tête1erGraphique">
-                        <p className='SousTitrePremierGraphique'>Forecasts</p>
-                        <div className="dateChange">
-                            <p>04/10/2023</p>
-                            <img src={Chevron} alt="Chevron" />
+                    <div className="TitleDate">
+                        <h1 className='Title'>{!!marque && marque} {!!modele && modele}</h1>
+                        <div className="En-tête1erGraphique">
+                            <span className='SousTitrePremierGraphique'>Forecasts</span>
+                            <div className="dateChange">
+                                <p>04/10/2023</p>
+                                <img src={Chevron} alt="Chevron" />
+                            </div>
                         </div>
                     </div>
                     <div className="PremierGraphique">
@@ -79,12 +81,6 @@ export default function ContentPageModele() {
                         <p className='SousTitreDeuxiemeGraphique'>Comparison of the market share of the C3 on the automobile market and at Aramis</p>
                         <div className='Bar'> <BarChart /> </div>
                     </div>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
                     <div className="TroixièmeGraphique">
                         <p className='SousTitreTroixièmeGraphique'>Stock of vehicles at each stage of sale</p>
                         <div className='Bar'> <BarChartStock /></div>
