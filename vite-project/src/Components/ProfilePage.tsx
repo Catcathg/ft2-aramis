@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./ProfilePage.css";
 import ImageProfile from '@/assets/Images/imageProfile.png';
 import EmailIcon from '@/assets/Images/email-icon.svg';
@@ -6,6 +6,12 @@ import ProfileIcon from '@/assets/Images/profile-icon.svg';
 import Nav from "./Nav";
 
 export default function ProfilePage() {
+  const [fieldValues, setFieldValues] = useState({
+    email: "",
+    type: "",
+    pole: "",
+  });
+
   const [fieldErrors, setFieldErrors] = useState({});
 
   const validateField = (fieldName, fieldValue) => {
@@ -19,11 +25,11 @@ export default function ProfilePage() {
       }
     }
 
-    if (fieldName === "vehiculeType") {
+    if (fieldName === "type") {
       if (!["VN", "VO"].includes(fieldValue)) {
-        errors.vehiculeType = "Type must be VN or VO";
+        errors.type = "Type must be VN or VO";
       } else {
-        delete errors.vehiculeType;
+        delete errors.type;
       }
     }
 
@@ -39,11 +45,21 @@ export default function ProfilePage() {
     setFieldErrors(errors);
   };
 
+  useEffect(() => {
+    const storedData = localStorage.getItem("content");
+    if (storedData) {
+      setFieldValues(JSON.parse(storedData));
+    }
+  }, []);
+
+  const updateLocalStorage = () => {
+    localStorage.setItem("content", JSON.stringify(fieldValues));
+  };
+
   return (
     <>
       <Nav />
       <div className="ContentProfile">
-        <p>Do you want to make changes?</p>
         <h1 className="TextProfile">Profile</h1>
         <div className="cardProfile">
           <p className="Name">Baptiste Legrand</p>
@@ -57,7 +73,12 @@ export default function ProfilePage() {
                 <input className="input"
                   type="text"
                   name="email"
-                  onChange={(e) => validateField("email", e.target.value)}
+                  value={fieldValues.email}
+                  onChange={(e) => {
+                    validateField("email", e.target.value);
+                    setFieldValues((prevValues) => ({ ...prevValues, email: e.target.value }));
+                  }}
+                  onBlur={updateLocalStorage}
                   style={{
                     backgroundImage: `url(${EmailIcon})`,
                   }}
@@ -69,21 +90,31 @@ export default function ProfilePage() {
               <div className="IconInputContainer">
                 <input className="input"
                   type="text"
-                  name="vehiculeType"
-                  onChange={(e) => validateField("vehiculeType", e.target.value)}
+                  name="type"
+                  value={fieldValues.type}
+                  onChange={(e) => {
+                    validateField("type", e.target.value);
+                    setFieldValues((prevValues) => ({ ...prevValues, type: e.target.value }));
+                  }}
+                  onBlur={updateLocalStorage}
                   style={{
                     backgroundImage: `url(${ProfileIcon})`,
                   }}
                 />
               </div>
-              {fieldErrors.vehiculeType && <span className="error">{fieldErrors.vehiculeType}</span>}
+              {fieldErrors.type && <span className="error">{fieldErrors.type}</span>}
 
               <p>Pôle</p>
               <div className="IconInputContainer">
                 <input className="input"
                   type="text"
                   name="pole"
-                  onChange={(e) => validateField("pole", e.target.value)}
+                  value={fieldValues.pole}
+                  onChange={(e) => {
+                    validateField("pole", e.target.value);
+                    setFieldValues((prevValues) => ({ ...prevValues, pole: e.target.value }));
+                  }}
+                  onBlur={updateLocalStorage}
                   style={{
                     backgroundImage: `url(${ProfileIcon})`,
                   }}
@@ -94,6 +125,7 @@ export default function ProfilePage() {
           </div>
         </div>
       </div>
+      <br />
       <br />
       <br />
     </>
