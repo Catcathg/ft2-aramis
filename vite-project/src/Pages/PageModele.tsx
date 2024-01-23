@@ -5,8 +5,8 @@ import "../Components/ContentPageModele.css"
 function PageModele () {
     return(
         <>
-            <Nav></Nav>
-            <ContentPageModele></ContentPageModele>
+            <Nav/>
+            <ContentPageModele/>
         </>
     )
 }
