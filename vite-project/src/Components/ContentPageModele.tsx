@@ -76,7 +76,7 @@ export default function ContentPageModele() {
                         </div>
                     </div>
                     <div className="DeuxiemeGraphique">
-                        <p className='SousTitreDeuxiemeGraphique'>Comparison of the market share of the C3 on the automobile market and at Aramis :</p>
+                        <p className='SousTitreDeuxiemeGraphique'>Comparison of the market share of the C3 on the automobile market and at Aramis</p>
                         <div className='Bar'> <BarChart /> </div>
                     </div>
                     <br />
