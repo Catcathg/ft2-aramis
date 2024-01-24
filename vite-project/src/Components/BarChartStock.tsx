@@ -1,38 +1,50 @@
 import React, { useEffect, useState, useMemo } from "react";
+import { useParams } from "react-router-dom"; 
 import Chart from "react-apexcharts";
 import "./BarChart.css";
 import DataSetStockVente from '@data/aramis-auto/stock-arrivage.json';
 import _ from "lodash";
 
-function BarChartStock() {
-  const ModelsStockVente = DataSetStockVente.reduce((acc, item) => {
-    if (item.VEHICULE_MARQUE === "Citroën") {
-      acc[item.STATUT_VEHICULE_ROBUSTO] = (acc[item.STATUT_VEHICULE_ROBUSTO] || 0) + 1;
-    }
-    return acc;
-  }, {}); 
 
-  const [stepBuilder, setStepBuilder] = useState([]);
-  const indicator = "STATUT_VEHICULE_ROBUSTO";
+function BarChartStock() {
+  const params = useParams();
+  const modele = params.modele;
+  const [marque, setMarque] = useState<string | null>(null);
+  const [car, setCar] = useState<any[]>([]); 
+  const [stepBuilder, setStepBuilder] = useState<string[]>([]);
+  const indicator = 'STATUT_VEHICULE_ROBUSTO' ;
+
+  const ModelsStockVente = car.reduce((acc, item) => {
+    acc[item.STATUT_VEHICULE_ROBUSTO] = (acc[item.STATUT_VEHICULE_ROBUSTO] || 0) + 1;
+    return acc;
+  }, {});
 
   const arrayStepsConsidered = useMemo(() => [
-    "Arrivé fournisseur",
-    "Préparation effectuée. VH prêt",
-    "En cours de préparation",
     "Confirmé fournisseur",
+    "Arrivé fournisseur",
+    "En cours de préparation",
+    "Préparation effectuée. VH prêt",
     "Arrivé Aramis",
   ], []);
 
-  const [marque, setMarque] = useState<string>(null);
-
   useEffect(() => {
-    const steps = _.chain(DataSetStockVente)
+    const steps = _.chain(car)
       .filter((e) => arrayStepsConsidered.includes(e[indicator]))
       .map((e) => e[indicator])
       .uniq()
       .value();
     setStepBuilder(steps);
-  }, [arrayStepsConsidered, indicator]);
+  }, [car, arrayStepsConsidered, indicator]);
+
+  useEffect(() => {
+    if (DataSetStockVente && DataSetStockVente.length > 0) {
+      const selectedCar = DataSetStockVente.find((item: any) => String(item.VEHICULE_MODELE) === String(modele));
+      if (selectedCar) {
+        setMarque(selectedCar.VEHICULE_MARQUE);
+        setCar(DataSetStockVente.filter((item: any) => String(item.VEHICULE_MODELE) === String(modele)));
+      }
+    }
+  }, [modele]);
 
   const config = {
     options: {
@@ -52,7 +64,7 @@ function BarChartStock() {
     },
     series: [
       {
-        name: "Number of Citroën Vehicles",
+        name: `Number of ${marque || "All"} Vehicles`,
         data: stepBuilder.map((step) => ModelsStockVente[step] || 0),
         color: "#F695A8",
       },
