@@ -30,7 +30,7 @@ export default function SimpleListWithIcons() {
     return (
         <Box sx={{ flexGrow: 1, maxWidth: 235 }}>
             <Demo>
-                <List sx={{ height: 420, overflow: 'auto' }}>
+                <List sx={{ height: 400, overflow: 'auto' }}>
                     {Object.entries(ModelsStockVente).map(([model, nbStock], index) => (
                         <ListItem className="itemList" key={index}>
                             <StyledIconDiv nbStock={nbStock}>
