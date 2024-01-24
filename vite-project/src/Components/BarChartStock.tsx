@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { useParams } from "react-router-dom"; 
+import { useParams } from "react-router-dom";
 import Chart from "react-apexcharts";
 import "./BarChart.css";
 import DataSetStockVente from '@data/aramis-auto/stock-arrivage.json';
@@ -9,42 +9,24 @@ import _ from "lodash";
 function BarChartStock() {
   const params = useParams();
   const modele = params.modele;
-  const [marque, setMarque] = useState<string | null>(null);
-  const [car, setCar] = useState<any[]>([]); 
-  const [stepBuilder, setStepBuilder] = useState<string[]>([]);
-  const indicator = 'STATUT_VEHICULE_ROBUSTO' ;
+  const selectedCar = DataSetStockVente.find((item: any) => String(item.VEHICULE_MODELE) === String(modele));
+  if (!selectedCar) {
+    return <p>model not found</p>
+  }
+  const marque = selectedCar.VEHICULE_MARQUE;
+  const cars = DataSetStockVente.filter((item: any) => String(item.VEHICULE_MODELE) === String(modele));
 
-  const ModelsStockVente = car.reduce((acc, item) => {
+  const ModelsStockVente = cars.reduce((acc, item) => {
+    if (acc[item.STATUT_VEHICULE_ROBUSTO] === undefined) return acc;
     acc[item.STATUT_VEHICULE_ROBUSTO] = (acc[item.STATUT_VEHICULE_ROBUSTO] || 0) + 1;
     return acc;
-  }, {});
-
-  const arrayStepsConsidered = useMemo(() => [
-    "Confirmé fournisseur",
-    "Arrivé fournisseur",
-    "En cours de préparation",
-    "Préparation effectuée. VH prêt",
-    "Arrivé Aramis",
-  ], []);
-
-  useEffect(() => {
-    const steps = _.chain(car)
-      .filter((e) => arrayStepsConsidered.includes(e[indicator]))
-      .map((e) => e[indicator])
-      .uniq()
-      .value();
-    setStepBuilder(steps);
-  }, [car, arrayStepsConsidered, indicator]);
-
-  useEffect(() => {
-    if (DataSetStockVente && DataSetStockVente.length > 0) {
-      const selectedCar = DataSetStockVente.find((item: any) => String(item.VEHICULE_MODELE) === String(modele));
-      if (selectedCar) {
-        setMarque(selectedCar.VEHICULE_MARQUE);
-        setCar(DataSetStockVente.filter((item: any) => String(item.VEHICULE_MODELE) === String(modele)));
-      }
-    }
-  }, [modele]);
+  }, {
+    "Confirmé fournisseur": 0,
+    "Arrivé fournisseur": 0,
+    "En cours de préparation": 0,
+    "Préparation effectuée. VH prêt": 0,
+    "Arrivé Aramis": 0
+  });
 
   const config = {
     options: {
@@ -52,7 +34,7 @@ function BarChartStock() {
         id: "basic-bar",
       },
       xaxis: {
-        categories: stepBuilder,
+        categories: Object.keys(ModelsStockVente),
       },
       colors: ["#008FFB", "#00E396"],
       plotOptions: {
@@ -65,7 +47,7 @@ function BarChartStock() {
     series: [
       {
         name: `Number of  ${marque} ${modele} vehicles`,
-        data: stepBuilder.map((step) => ModelsStockVente[step] || 0),
+        data: Object.values(ModelsStockVente),
         color: "#F695A8",
       },
     ],

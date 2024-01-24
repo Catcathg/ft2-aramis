@@ -83,7 +83,7 @@ export default function ContentPageModele() {
                     <div className="contentDeuxiemeGraphique">
                         <div className="DeuxiemeGraphique">
                             <div className="colonneUnGraphique">
-                                <h3 className='SousTitreDeuxiemeGraphique'>Comparison of the market share of the C3 on the automobile market and at Aramis</h3>
+                                <h3 className='SousTitreDeuxiemeGraphique'>Comparison of the market share of the {modele} on the automobile market and at Aramis</h3>
                                 <div className='Bar'> <BarChart /> </div>
                             </div>
                         </div>

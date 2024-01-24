@@ -39,7 +39,7 @@ export default function RadarCharts({ data, modele, steps, fournisseur1 }, { sta
             // console.log('A: ', o.STATUT_VEHICULE_ROBUSTO)
             return o.STATUT_VEHICULE_ROBUSTO === elt
           }),
-          B: 110,
+          //B: 
           // fullMark: maxValue, // Laisser vide pour que le chart se dimension sur son propre max
         })
 

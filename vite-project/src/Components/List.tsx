@@ -20,7 +20,7 @@ const StyledIconDiv = styled('div')(({ nbStock }) => ({
 
 export default function SimpleListWithIcons() {
     const ModelsStockVente = DataSetStockVente.reduce((acc, item) => {
-        if (item.VEHICULE_MARQUE === 'Citroën') {
+        if (item.VEHICULE_MARQUE === item.VEHICULE_MARQUE) {
             acc[item.VEHICULE_MODELE] = (acc[item.VEHICULE_MODELE] || 0) + 1;
         } return acc;
     }, {});
@@ -30,7 +30,7 @@ export default function SimpleListWithIcons() {
     return (
         <Box sx={{ flexGrow: 1, maxWidth: 235 }}>
             <Demo> 
-                <List sx={{ height: 400, overflow: 'auto' }}>
+                <List sx={{ height: 360, overflow: 'auto' }}>
                     {Object.entries(ModelsStockVente).map(([model, nbStock], index) => (
                         <ListItem className="itemList" key={index}>
                             <StyledIconDiv nbStock={nbStock}>

@@ -60,6 +60,7 @@
     display: flex;
     justify-content: space-around;
     height: 730px;
+    margin-bottom: 100px;
 }
 
 
@@ -79,9 +80,12 @@
     height: 100px;
     margin: 40px;
 }
+.colonneUnGraphique{
+}
 
 .colonneDeuxiemeGraphique {
-    height: 582px;
+    display: flex;
+    flex-direction: column;
 }
 
 .titreEnergy {
