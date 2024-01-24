@@ -29,9 +29,7 @@ function Content() {
                     <div className="bodyLeft">
                         <div className="brandLogo">
                             <a href="#"><img className="brand" src={Peugeot} alt="PeugeotBrand" /></a>
-                            <Link to="/PageModele/:citroen">
-                                <img className="brand" src={Citroen} alt="CitroenBrand" />
-                            </Link>
+                            <a href="#"><img className="brand" src={Citroen} alt="CitroenBrand" /></a>
                             <a href="#"><img className="brand" src={Renault} alt="RenaultBrand" /></a>
                             <a href="#"><img className="brand" src={Skoda} alt="SkodaBrand" /></a>
                         </div>

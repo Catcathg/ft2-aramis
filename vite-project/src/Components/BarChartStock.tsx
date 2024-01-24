@@ -64,7 +64,7 @@ function BarChartStock() {
     },
     series: [
       {
-        name: `Number of ${marque || "All"} Vehicles`,
+        name: `Number of  ${marque} ${modele} vehicles`,
         data: stepBuilder.map((step) => ModelsStockVente[step] || 0),
         color: "#F695A8",
       },
