@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import './Content.css'
 import Peugeot from '@/assets/Images/peugeot.svg'
 import Citroen from '@/assets/Images/citroen.svg'
@@ -12,6 +14,7 @@ import Line from '@/assets/Images/line.svg'
 import SearchBar from './searchBar'
 import List from './List'
 import HistoricItemsTableau from './HistoricItems'
+import ContentPageModele from './ContentPageModele'
 
 function Content() {
 
@@ -26,7 +29,9 @@ function Content() {
                     <div className="bodyLeft">
                         <div className="brandLogo">
                             <a href="#"><img className="brand" src={Peugeot} alt="PeugeotBrand" /></a>
-                            <a href="#"><img className="brand" src={Citroen} alt="CitroenBrand" /></a>
+                            <Link to="/PageModele/:citroen">
+                                <img className="brand" src={Citroen} alt="CitroenBrand" />
+                            </Link>
                             <a href="#"><img className="brand" src={Renault} alt="RenaultBrand" /></a>
                             <a href="#"><img className="brand" src={Skoda} alt="SkodaBrand" /></a>
                         </div>

@@ -16,7 +16,7 @@ h1 {
     font-weight: 400;
     font-family: 'Open Sans';
     margin-top: 15px;
-    
+
 
 }
 
@@ -112,11 +112,11 @@ a :hover {
 }
 
 .infoCar {
-   display: inline-block;
-   width: 140px;
+    display: inline-block;
+    width: 140px;
 }
 
-.imageCar{
+.imageCar {
     height: 90px;
 }
 
@@ -127,4 +127,8 @@ a :hover {
 
 .stockInfo span {
     color: white;
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
 }

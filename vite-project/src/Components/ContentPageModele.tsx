@@ -69,19 +69,20 @@ export default function ContentPageModele() {
                                     <img src={Chevron} alt="Chevron" />
                                 </div>
                             </div>
-                            <div className="PremierGraphique">
-                                <div className="Parking">
-                                    <img src={Parking} alt="Parking" />
-                                </div>
-                                <div className="ChartsRadar">
-                                    <RadarChart data={car} modele={modele} steps={stepBuilder} fournisseur1={'Aramis'} />
-                                </div>
-                            </div>
                         </div>
                     </div>
+                    <div className="PremierGraphique">
+                        <div className="Parking">
+                            <img src={Parking} alt="Parking" />
+                        </div>
+                        <div className="ChartsRadar">
+                            <RadarChart data={car} modele={modele} steps={stepBuilder} fournisseur1={'Aramis'} />
+                        </div>
+                    </div>
+
                     <div className="contentDeuxiemeGraphique">
                         <div className="DeuxiemeGraphique">
-                            <div className="colonneUneGraphique">
+                            <div className="colonneUnGraphique">
                                 <h3 className='SousTitreDeuxiemeGraphique'>Comparison of the market share of the C3 on the automobile market and at Aramis</h3>
                                 <div className='Bar'> <BarChart /> </div>
                             </div>
@@ -89,7 +90,7 @@ export default function ContentPageModele() {
                         <div className="colonneDeuxiemeGraphique">
                             <p className="titreEnergy">Energy Market Share</p>
                             <div className="Energytypediv">
-                                <img src={Vector} alt="img energy" />
+                                <img className="vector" src={Vector} alt="img energy" />
                             </div>
                             <p className="titreGearboxes">Gearboxes market share</p>
                             <div className="Gearboxestypediv">
@@ -98,6 +99,7 @@ export default function ContentPageModele() {
                             </div>
                         </div>
                     </div>
+                    
                     <div className="contentTroisiemeGraphique">
                         <div className="TroixièmeGraphique">
                             <p className='SousTitreTroixièmeGraphique'>Stock of vehicles at each stage of sale</p>

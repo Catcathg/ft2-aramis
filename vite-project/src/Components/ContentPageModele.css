@@ -2,7 +2,6 @@
 
 .Content {
     padding-top: 130px;
-    padding-left: 50px;
 }
 
 .dateChange p {
@@ -56,26 +55,36 @@
     border: 1px solid #B4BED9;
     border-radius: 16px;
 }
-.contentDeuxiemeGraphique{
+
+.contentDeuxiemeGraphique {
     display: flex;
-    align-items: center;
+    justify-content: space-around;
+    height: 730px;
 }
-.colonneDeuxiemeGraphique{
-    padding-left: 100px;
-    flex-direction: column;
-}
-.Energytypediv{
+
+
+.Energytypediv {
     display: inline-flex;
-    width: 390px;
+    width: 320px;
     height: 180px;
     border: 1px solid #B4BED9;
     align-items: center;
     justify-content: flex-end;
     background: #FFF;
     border-radius: 16px;
+}
 
+.vector {
+    width: 140px;
+    height: 100px;
+    margin: 40px;
 }
-.titreEnergy{
+
+.colonneDeuxiemeGraphique {
+    height: 582px;
+}
+
+.titreEnergy {
     color: #065C9E;
     font-family: "Open Sans";
     font-size: 24px;
@@ -83,7 +92,8 @@
     font-weight: 600;
     line-height: normal;
 }
-.titreGearboxes{
+
+.titreGearboxes {
     color: #065C9E;
     font-family: "Open Sans";
     font-size: 24px;
@@ -91,17 +101,18 @@
     font-weight: 600;
     line-height: normal;
 }
-.Gearboxestypediv{
+
+.Gearboxestypediv {
     display: inline-flex;
     justify-content: space-around;
-    width: 390px;
+    width: 320px;
     height: 180px;
     border: 1px solid #B4BED9;
     align-items: center;
     background: #FFF;
     border-radius: 16px;
-
 }
+
 .ChartsRadar {
     width: 100%;
     height: 600px;
@@ -117,10 +128,6 @@
     color: #065C9E;
     font-weight: bold;
     font-size: 24px;
-}
-
-.DeuxiemeGraphique {
-    margin-top: 100px;
 }
 
 .Bar {
@@ -142,4 +149,8 @@
     color: #065C9E;
     font-weight: bold;
     font-size: 24px;
+}
+
+.contentTroisiemeGraphique {
+    margin-left: 35px;
 }

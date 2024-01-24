@@ -6,7 +6,7 @@ import _ from "lodash";
 
 function BarChartStock() {
   const ModelsStockVente = DataSetStockVente.reduce((acc, item) => {
-    if (item.VEHICULE_MARQUE === "208") {
+    if (item.VEHICULE_MARQUE === "Citroën") {
       acc[item.STATUT_VEHICULE_ROBUSTO] = (acc[item.STATUT_VEHICULE_ROBUSTO] || 0) + 1;
     }
     return acc;
@@ -24,7 +24,7 @@ function BarChartStock() {
   ], []);
 
   const [marque, setMarque] = useState<string>(null);
-  
+
   useEffect(() => {
     const steps = _.chain(DataSetStockVente)
       .filter((e) => arrayStepsConsidered.includes(e[indicator]))
