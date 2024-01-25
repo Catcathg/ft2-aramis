@@ -15,8 +15,13 @@ import SearchBar from './searchBar'
 import List from './List'
 import HistoricItemsTableau from './HistoricItems'
 import ContentPageModele from './ContentPageModele'
+import Data from '../../data/aramis-auto/stock-vente.json'
 
 function Content() {
+
+    /*const Filtre = Data.filter((e) =>{
+        if ()
+    }) */
 
     return (
         <>

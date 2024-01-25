@@ -99,7 +99,7 @@ export default function ContentPageModele() {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="contentTroisiemeGraphique">
                         <div className="TroixièmeGraphique">
                             <p className='SousTitreTroixièmeGraphique'>Stock of vehicles at each stage of sale</p>
